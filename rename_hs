@@ -1,15 +1,18 @@
 #!/bin/bash
-counter=1;
 
+counter=1;
 for f in $(ls -1)
     do
         new_filename=$(printf "%04d" ${counter})
-        echo "renaming ${f} ..to.. ${new_filename}"
-        mv ${f} ${new_filename}
-        (( counter=${counter}+1 ))
+	if [ ${f} = "rename_hs" ]; then
+		echo "${f} is bash file."
+	else
+	        echo "renaming ${f} ..to.. ${new_filename}"
+	        mv ${f} ${new_filename}
+		(( counter=${counter}+1 ))
+	fi
+	
     done
-
-
 
 ######################ReadME###############################
 #							  #
