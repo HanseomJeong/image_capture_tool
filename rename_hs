@@ -1,5 +1,5 @@
 #!/bin/bash
-int counter=1;
+counter=1;
 
 for f in $(ls -1)
     do
